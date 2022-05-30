@@ -2,9 +2,8 @@ import React from "react";
 
 function Product(props){
 
-    return (
-        <div>
-
+    return ( 
+        <div>   
         </div>
     )
 }

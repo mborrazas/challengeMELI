@@ -1,16 +1,7 @@
-import react, {useState} from 'react';
-import { useNavigate } from "react-router";
+import React from 'react';
 
-function Header(){
-    const navigate = useNavigate();
-    const [search, setSearch] = useState('');
-    const submitForm = (e) => {
-        e.preventDefault();
-        navigate({    
-            pathname: '/items',
-            search: `?search=${search}` 
-        });
-    }
+function Header({submitForm, search, setSearch}){
+
     return (
         <header>
             <form onSubmit={submitForm}>
