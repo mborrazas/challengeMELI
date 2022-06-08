@@ -55,22 +55,21 @@ exports.getItem = async(id) => {
         axios.get(constants.API_URL + `items/${id}/description`),
     ])
     .then(axios.spread((item, description) => {
-        const [data] = item;
-        const [amount, decimals] =  data.price.toString().split(".");
+        const [amount, decimals] =  item.data.price.toString().split(".");
         return {
             ...AUTHOR,
             item: {
-                id: data.id,
-                title: data.title, 
+                id: item.data.id,
+                title: item.data.title, 
                 price: {
-                    currency: data.currency_id, 
+                    currency: item.data.currency_id, 
                     amount: parseInt(amount), 
                     decimals: parseInt(decimals),
                 },
-                picture: data.thumbnail, 
-                condition: data.condition, 
-                free_shipping: data.shipping.free_shipping, 
-                sold_quantity: data.sold_quantity,
+                picture: item.data.thumbnail, 
+                condition: item.data.condition, 
+                free_shipping: item.data.shipping.free_shipping, 
+                sold_quantity: item.data.sold_quantity,
                 description: description.data.plain_text
             } 
         }
