@@ -1,6 +1,5 @@
 const e = require('express');
-const axios = require('axios');
-const {Router, query} = require('express');
+const {Router} = require('express');
 const items = require('../services/items');
 const router = Router();
 const NodeCache = require('node-cache')
