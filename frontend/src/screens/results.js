@@ -24,7 +24,7 @@ function Results({results}){
         });
         setData(results);
     }
-
+ 
     useEffect(() => {
         onSearch();
     }, []);
