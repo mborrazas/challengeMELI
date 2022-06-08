@@ -1,7 +1,7 @@
 {
   "name": "challengemeli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api for challengeMeli",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/mborrazas/challengeMELI.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Matias Borrazas",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mborrazas/challengeMELI/issues"

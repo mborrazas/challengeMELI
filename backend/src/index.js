@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 const routes = require('./routes');
+const constants = require('./constants');
 
-app.set('port', process.env.PORT || 3000);
-app.set('json spaces', 2);
-app.use(routes);
+app.use(express.json());
+app.use('/api/items',routes);
 
-app.listen(app.get('port'),() => {
-    console.log(`Server listening on port ${app.get('port')}`);
+app.listen(constants.PORT,() => {
+    console.log(`Server listening on port ${constants.PORT}`);
 });
