@@ -1,7 +1,6 @@
 const axios = require('axios');
 const constants = require('../constants');
 
-
 const AUTHOR = {
     author: {
         name: constants.AUTHOR_NAME,
