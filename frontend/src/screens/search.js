@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router";
-import { Header } from "../components";
+import { Header, Categories } from "../components";
 
 function Search(){
     const navigate = useNavigate();
@@ -13,10 +13,9 @@ function Search(){
             search: `?search=${search}` 
         });
     }
-
     return (
-        <div className="search">
-            <Header submitForm={submitForm} search={search} setSearch={setSearch} />
+        <div>
+            <Header submitForm={submitForm} search={search} setSearch={setSearch} />            
         </div>
     )
 }

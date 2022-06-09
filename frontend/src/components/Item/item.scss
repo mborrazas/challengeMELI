@@ -1,0 +1,44 @@
+.item {
+    height: 200px;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+  
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  
+    &:not(:last-child) {
+      border-bottom: solid 1px #cccccc;
+    }
+  }
+  .itemInfo {
+    flex: 9;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    .itemTitle {
+        text-decoration: none;
+        color: initial;
+        font-size: 20px;
+    }
+    .itemPrice{
+        display: inline-block;
+        font-size: 22px;
+        .itemDecimals{
+            font-size: 12px;
+            position: relative;
+            bottom: 7px;
+        }
+    }
+    .itemShipping{
+        position: relative;
+        font-style: italic;
+        color: #00a650;
+    }
+  }
+  
+  
+  
+ 

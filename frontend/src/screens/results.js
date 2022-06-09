@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import ApiSource from "../api/ApiSource";
 import { ItemResult, Header, Categories } from "../components";
 
 function Results({results}){
@@ -8,7 +7,9 @@ function Results({results}){
     const navigate = useNavigate();
     const params = Object.fromEntries([...searchParams]);
     const [search, setSearch] = useState(params.search);
-    const [data, setData] = useState([]);
+    const [items, setItems] = useState([]);
+    const [categories, setCategories] = useState([]);
+
     
     const submitForm = (e) => {
         e.preventDefault();
@@ -16,31 +17,32 @@ function Results({results}){
             pathname: '/items',
             search: `?search=${search}` 
         });
-        onSearch();
-    }
-    const onSearch = async () => {
-        const results = await ApiSource.get('/api/items', {
-           params: {q: search} 
-        });
-        setData(results);
+        getData();
     }
  
+    const getData = async () => {
+        fetch(`http://localhost:4000/api/items?q=${search}`)
+        .then(response => response.json())
+        .then(response => {
+            setItems(response.items);
+            setCategories(response.categories);
+        })
+          .catch(error => {
+            console.error(error);
+        });;
+    };
+    
     useEffect(() => {
-        onSearch();
+        getData();
     }, []);
-
+    
+    
     return (
-        <div className="results">
+        <>
             <Header submitForm={submitForm} search={search} setSearch={setSearch} />
-            <Categories />
-            <div className="items">            
-                {
-                    data.map((item) =>  (
-                        <ItemResult item={item} />
-                    ))
-                }
-            </div>
-        </div>
+            <Categories categories={categories} />
+            <ItemResult items={items} />
+        </>
     )
 }
 

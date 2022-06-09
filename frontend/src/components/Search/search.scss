@@ -1,0 +1,18 @@
+.searchForm {
+  display: flex;
+  .searchInput{
+    width: 40vw;
+    height: 25px;
+    max-width: 600px;
+    border: 0;
+    padding-left: 10px;
+  }
+  .searchBtn{
+    width: 30px;
+    background: no-repeat url("../../assets/search.png") 50% 50% #efecec;
+    border: 0;
+    background-size: 40px;
+    cursor: pointer;
+  }
+}
+  

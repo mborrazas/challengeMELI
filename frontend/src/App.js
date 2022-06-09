@@ -10,12 +10,12 @@ import { Product, Search, Results } from './screens';
 function App() {
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Search />} /> 
-      <Route path="/items" element={<Results />} /> 
-      <Route path="/items/:id" element={<Product />} /> 
-    </Routes>
-</BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Search />} />
+        <Route path="/items" element={<Results />} />
+        <Route path="/items/:id" element={<Product />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
