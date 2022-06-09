@@ -1,5 +1,7 @@
 import "./item.scss";
 import { Link } from "react-router-dom";
+import prices from "../../utils/prices";
+
 
 function Item({id, picture, title, condition, free_shipping, price}){
     return (
@@ -13,13 +15,13 @@ function Item({id, picture, title, condition, free_shipping, price}){
         </Link>
         <div className="itemInfo">
           <p className="itemPrice">
-            
-          
-              <span className="itemDecimals"></span>
-    
+              {prices(price)}
+              {price.decimals ? (
+                <span className="itemDecimals">{price.decimals}</span>
+              ) : null}    
           </p>
             {free_shipping ? (
-                <span className="itemShipping">Env&iacute;o Gratis!</span>
+                 <img className="freeShipping" src="../../assets/ic_shipping.png" alt="Envio gratis" />
             ) : null}
             
           <Link

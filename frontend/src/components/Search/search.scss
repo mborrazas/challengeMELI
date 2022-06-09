@@ -9,9 +9,10 @@
   }
   .searchBtn{
     width: 30px;
-    background: no-repeat url("../../assets/search.png") 50% 50% #efecec;
+    background: no-repeat url("../../assets/search.png") 45% 13% #efecec;
     border: 0;
-    background-size: 40px;
+    background-size: initial;
+    background-position: center;
     cursor: pointer;
   }
 }

@@ -55,6 +55,7 @@ exports.getItem = async(id) => {
     ])
     .then(axios.spread((item, description) => {
         const [amount, decimals] =  item.data.price.toString().split(".");
+
         return {
             ...AUTHOR,
             item: {
@@ -70,7 +71,7 @@ exports.getItem = async(id) => {
                 free_shipping: item.data.shipping.free_shipping, 
                 sold_quantity: item.data.sold_quantity,
                 description: description.data.plain_text
-            } 
+            }
         }
     }))
     .catch((e) => {

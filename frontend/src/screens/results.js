@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { ItemResult, Header, Categories } from "../components";
 
-function Results({results}){
+function Results(){
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
     const params = Object.fromEntries([...searchParams]);

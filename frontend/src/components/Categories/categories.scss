@@ -3,13 +3,13 @@
     width: 60vw;
     min-width: 460px;
     max-width: 780px;
-    margin: 20px auto 0 auto;
+    margin: 16px auto 16px auto;
     padding: 0;
     .categoriesItem {
       display: inline-block;
       color: #aaaaaa;
       font-size: 14px;
-    
+
       &:not(:last-child)::after {
         display: inline-block;
         content: "";

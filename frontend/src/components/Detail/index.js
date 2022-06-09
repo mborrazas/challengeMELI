@@ -1,8 +1,9 @@
 import React from "react";
 import "./detail.scss";
+import prices from "../../utils/prices";
 
 function Detail({picture, title, condition, sold_quantity, description, price}){
-
+        console.log(price);
     return ( 
         <article>
             <div className="detailContainer">
@@ -14,7 +15,12 @@ function Detail({picture, title, condition, sold_quantity, description, price}){
                         {`${condition === "new" ? "Nuevo" : "Usado"} - ${sold_quantity} vendidos`}
                     </p>
                     <h1 className="detailTitle">{title}</h1>
-                    <p className="detailPrice"></p>
+                    <p className="detailPrice">
+                    {price && prices(price)}
+                    {price && price.decimals ? (
+                        <span className="itemDecimals">{price.decimals}</span>
+                    ) : null}    
+                    </p>    
                     <button className="detailButton">Comprar</button>
                 </div>
             </div>
